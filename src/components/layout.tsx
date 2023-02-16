@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import React from 'react'
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode
   title?: string
 }

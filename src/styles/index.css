@@ -1,86 +1,93 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .hello_svg__part1 {
-    stroke-dasharray: 387.6499938964844;
-    stroke-dashoffset: 387.6499938964844;
-    animation: sign 0.407029s linear forwards;
+    stroke-dasharray: 387.65;
+    stroke-dashoffset: 387.65;
+    animation: sign 0.19944s linear forwards;
     animation-delay: 0s;
-}
+  }
+  
+  .hello_svg__part2 {
+    stroke-dasharray: 461.92;
+    stroke-dashoffset: 461.92;
+    animation: sign 0.23766s linear forwards;
+    animation-delay: 0.19944s;
+  }
+  
+  .hello_svg__part3 {
+    stroke-dasharray: 568.76;
+    stroke-dashoffset: 568.76;
+    animation: sign 0.29193s linear forwards;
+    animation-delay: 0.4371s;
+  }
+  
+  .hello_svg__part4 {
+    stroke-dasharray: 194.51;
+    stroke-dashoffset: 194.51;
+    animation: sign 0.10007s linear forwards;
+    animation-delay: 0.72803s;
+  }
+  
+  .hello_svg__part5 {
+    stroke-dasharray: 278.39;
+    stroke-dashoffset: 278.39;
+    animation: sign 0.14323s linear forwards;
+    animation-delay: 0.8281s;
+  }
+  
+  .hello_svg__part6 {
+    stroke-dasharray: 475.79;
+    stroke-dashoffset: 475.79;
+    animation: sign 0.2448s linear forwards;
+    animation-delay: 0.97133s;
+  }
+  
+  .hello_svg__part7 {
+    stroke-dasharray: 428.03;
+    stroke-dashoffset: 428.03;
+    animation: sign 0.22073s linear forwards;
+    animation-delay: 1.21613s;
+  }
+  
+  .hello_svg__part8 {
+    stroke-dasharray: 471.00;
+    stroke-dashoffset: 471.00;
+    animation: sign 0.24233s linear forwards;
+    animation-delay: 1.43886s;
+  }
+  
+  .hello_svg__part9 {
+    stroke-dasharray: 437.21;
+    stroke-dashoffset: 437.21;
+    animation: sign 0.22495s linear forwards;
+    animation-delay: 1.80120s;
+  }
+  
+  .hello_svg__part10 {
+    stroke-dasharray: 280.30;
+    stroke-dashoffset: 280.30;
+    animation: sign 0.14351s linear forwards;
+    animation-delay: 2.26115s;
+  }
+  
+  .hello_svg__part11 {
+    stroke-dasharray: 263.22;
+    stroke-dashoffset: 263.22;
+    animation: sign 0.13543s linear forwards;
+    animation-delay: 2.40467s;
+  }
 
-.hello_svg__part2 {
-    stroke-dasharray: 461.9181213378906;
-    stroke-dashoffset: 461.9181213378906;
-    animation: sign 0.485016s linear forwards;
-    animation-delay: 0.407029s;
-}
-
-.hello_svg__part3 {
-    stroke-dasharray: 568.75927734375;
-    stroke-dashoffset: 568.75927734375;
-    animation: sign 0.597198s linear forwards;
-    animation-delay: 0.892045s;
-}
-
-.hello_svg__part4{
-    stroke-dasharray: 194.5091552734375;
-    stroke-dashoffset: 194.5091552734375;
-    animation: sign 0.204232s linear forwards;
-    animation-delay: 1.489243s;
-}
-
-.hello_svg__part5 {
-    stroke-dasharray: 278.38922119140625;
-    stroke-dashoffset: 278.38922119140625;
-    animation: sign 0.292306s linear forwards;
-    animation-delay: 1.693475s;
-}
-
-.hello_svg__part6 {
-    stroke-dasharray: 475.7906799316406;
-    stroke-dashoffset: 475.7906799316406;
-    animation: sign 0.499583s linear forwards;
-    animation-delay: 2.085781s;
-}
-
-.hello_svg__part7 {
-    stroke-dasharray: 428.02923583984375;
-    stroke-dashoffset: 428.02923583984375;
-    animation: sign 0.450478s linear forwards;
-    animation-delay: 2.585364s;
-}
-
-.hello_svg__part8 {
-    stroke-dasharray: 470.9991455078125;
-    stroke-dashoffset: 470.9991455078125;
-    animation: sign 0.494549s linear forwards;
-    animation-delay: 3.035842s; 
-}
-
-.hello_svg__part9 {
-    stroke-dasharray: 437.2131652832031;
-    stroke-dashoffset: 437.2131652832031;
-    animation: sign 0.459074s linear forwards;
-    animation-delay: 3.529391s;
-}
-
-
-.hello_svg__part10 {
-    stroke-dasharray: 280.2974853515625;
-    stroke-dashoffset: 280.2974853515625;
-    animation: sign 0.294315s linear forwards;
-    animation-delay: 3.988466s;
-}
-
-.hello_svg__part11 {
-    stroke-dasharray: 263.22113037109375;
-    stroke-dashoffset: 263.22113037109375;
-    animation: sign 0.276381s linear forwards;
-    animation-delay: 4.282781s;
-}
-
-.hello_svg__part12 {
-    stroke-dasharray: 424.8319091796875;
-    stroke-dashoffset: 424.8319091796875;
-    animation: sign 0.4460729s linear forwards;
-    animation-delay: 4.559162s;
+  .hello_svg__part12 {
+    stroke-dasharray: 424.83;
+    stroke-dashoffset: 424.831;
+    animation: sign 0.216475s linear forwards;
+    animation-delay: 2.5401s;
 }
 
 @keyframes sign {
@@ -92,7 +99,7 @@
 .initial-animation {
     opacity: 0;
     animation: opacity-anim 1s ease-in-out forwards;
-    animation-delay: 4.6s;
+    animation-delay: 2.6s;
 }
 
 @keyframes opacity-anim {
