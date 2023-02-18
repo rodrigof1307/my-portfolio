@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 
-import Layout from '@/components/layout'
-import Hello from '../../public/hello.svg'
-import React from '../../public/react.svg'
 import Image from 'next/image'
+
+import Hello from '../../public/hello.svg'
+
+import Layout from '@/components/layout'
 import Navbar from '@/components/navbar'
 import SectionLayout from '@/components/sectionLayout'
 import Footer from '@/components/footer'
 import SizingButtons from '@/components/sizingButtons'
+import Skills from '@/components/skills'
+import Experience from '@/components/experience'
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('intro')
@@ -100,12 +103,10 @@ export default function IndexPage() {
           <p className='text-3xl mt-3 text-center font-mono font-ultralight'>software engineer</p>
           <SectionLayout title='About Me'>
             <p className='font-mono text-xl m-auto w-4/5 min-w-[80rem] mb-9'>Hi! My name is <b>Rodrigo Fernandes</b> and I’m a <b>Frontend</b> and <b>Mobile Software Engineer</b> based in <b>Lisbon, Portugal</b>. I’m currently broadening my skills to become a <b>Full Stack Web3 Developer</b>!</p>
-            <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-96 rounded-xl'>
-              {/* <React width={200} height={200} viewBox="0 0 60 60"/> */}
-            </div>
+            <Skills />
           </SectionLayout>
           <SectionLayout title='Experience'>
-            <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-96 rounded-xl' />
+            <Experience />
           </SectionLayout>
           <SectionLayout title='Projects'>
             <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-96 rounded-xl' />
