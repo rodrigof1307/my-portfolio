@@ -111,7 +111,39 @@ html {
     }
 }
 
+.apple-bubble {
+  width: fit-content;
+  word-wrap: break-word;
+  margin-bottom: 0px;
+  position: relative;
+  padding: 8px 15px;
+  border-radius: 14px;
+  background: #E5E5EA;
+  color: black;
+  align-self: flex-start;
+}
 
+.apple-bubble:before,
+.apple-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+}
+
+.from-them:before {
+  left: -7px;
+  width: 20px;
+  background-color: #E5E5EA;
+  border-bottom-right-radius: 16px;
+}
+
+.from-them:after {
+  left: -10px;
+  width: 10px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}
 
 /* purgecss start ignore */
 @tailwind base;
