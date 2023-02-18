@@ -112,7 +112,7 @@ export default function IndexPage() {
             <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-96 rounded-xl' />
           </SectionLayout>
           <SectionLayout title='Education'>
-            <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[145rem]'}`}>
+            <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem]'}`}>
               <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[calc(100vh-6.5rem)] rounded-xl ${removeSticky ? '' : 'sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0`}>
                 <SizingButtons />
                 <div className='w-full h-10 flex justify-center items-center rounded-t-xl bg-dirty-white'>
