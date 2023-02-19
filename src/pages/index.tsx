@@ -7,20 +7,84 @@ import Hello from '../../public/hello.svg'
 import Layout from '@/components/layout'
 import Navbar from '@/components/navbar'
 import SectionLayout from '@/components/sectionLayout'
-import Footer from '@/components/footer'
-import SizingButtons from '@/components/sizingButtons'
 import Skills from '@/components/skills'
 import Experience from '@/components/experience'
+import Education from '@/components/education'
+import ContactMe from '@/components/contactMe'
+import Footer from '@/components/footer'
+import Projects from '@/components/projects'
+
+import NFTRenter from '@/components/projects/nftRenter'
+import LearningProjects from '@/components/projects/learningProjects'
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('intro')
+  const [removeProjectsSticky, setRemoveProjectsSticky] = useState(false)
+  const [emailInfo, setEmailInfo] = useState<EmailInfo[]>([
+    {
+        sender: "NFT Renter",
+        subject: 'The dApp to lend and rent NFTs!',
+        initialInfo: 'The NFT Renter dApp was done as the final project of the "Ethereum Developer Bootcamp" from Alchemy...',
+        read: true,
+        body: NFTRenter()
+    },
+    {
+        sender: 'Learning Projects',
+        subject: 'Learning by doing!',
+        initialInfo: 'Learning Projects is a Github repository that contains small simple projects that I built to learn...',
+        read: false,
+        body: LearningProjects()
+    }
+  ])
+  const [highlightedEmail, setHighlightedEmail] = useState(emailInfo[0])
+  const [removeEducationSticky, setRemoveEducationSticky] = useState(false)
   const [educationCode, setEducationCode] = useState(['','',''])
-  const [removeSticky, setRemoveSticky] = useState(false)
+
 
   const completeEducationCode = ['node masters.js', 'node bachelor.js', 'node courses.js']
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
+    const nftRenter = document.getElementsByClassName("nft-renter");
+
+    const handleNavbar = () => {
+      let activeSectionHelper = ''
+      for(let section of sections) {
+        const sectionTop = section.offsetTop;
+        if(scrollY === 0) {
+          activeSectionHelper = 'intro'
+          break
+        } else if(scrollY >= sectionTop - 500) {
+          activeSectionHelper = section.id;
+        } else {
+          break;
+        }
+      }
+      setActiveSection(activeSectionHelper)
+    };
+
+    const handleProjects = () => {
+      if(scrollY >= sections[2].offsetTop - 500) {
+        const ratio = (scrollY - sections[2].offsetTop)/(sections[3].offsetTop - sections[2].offsetTop)
+        if(0.15 <= ratio && ratio < 0.45) {
+          setHighlightedEmail(emailInfo[0])
+          if(nftRenter[0]) {
+            nftRenter[0].scrollTo({ top: (ratio-0.15)*1500, behavior: 'smooth'})
+          }
+        } if(ratio >= 0.5) {
+          setEmailInfo(emailInfo.map((email) => {
+            if(email.sender === emailInfo[1].sender) {
+              return {
+                ...email,
+                read: true
+              }
+            }
+            return email
+          }))
+          setHighlightedEmail(emailInfo[1])
+        }
+      }
+    }
 
     const handleEducation = () => {
       if(scrollY >= sections[3].offsetTop - 500) {
@@ -48,39 +112,26 @@ export default function IndexPage() {
       }
     }
 
-    /* This listener had to be separated from handleEducationDone since otherwise there would be an abrupt movement of the terminal */
     const handleRemoveSticky = () => {
       if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         /* If the scroll is done very fast the educationCodeText might not finish writing and thus we have to complete it this way */
         setEducationCode([...completeEducationCode])
-        setRemoveSticky(true)
+        setRemoveEducationSticky(true)
+        setRemoveProjectsSticky(true)
+        window.removeEventListener('scroll', handleProjects);
         window.removeEventListener('scroll', handleRemoveSticky);
       }
     }
 
-    const handleNavbar = () => {
-      let activeSectionHelper = ''
-      for(let section of sections) {
-        const sectionTop = section.offsetTop;
-        if(scrollY === 0) {
-          activeSectionHelper = 'intro'
-          break
-        } else if(scrollY >= sectionTop - 500) {
-          activeSectionHelper = section.id;
-        } else {
-          break;
-        }
-      }
-      setActiveSection(activeSectionHelper)
-    };
-
     window.addEventListener('scroll', handleNavbar);
+    window.addEventListener('scroll', handleProjects);
     window.addEventListener('scroll', handleEducation);
     window.addEventListener('scroll', handleEducationDone);
     window.addEventListener('scroll', handleRemoveSticky);
 
     return () => {
       window.removeEventListener('scroll', handleNavbar);
+      window.removeEventListener('scroll', handleProjects);
       window.removeEventListener('scroll', handleEducation);
       window.removeEventListener('scroll', handleEducationDone);
       window.removeEventListener('scroll', handleRemoveSticky);
@@ -109,116 +160,13 @@ export default function IndexPage() {
             <Experience />
           </SectionLayout>
           <SectionLayout title='Projects'>
-            <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-96 rounded-xl' />
+            <Projects emailInfo={emailInfo} setEmailInfo={setEmailInfo} highlightedEmail={highlightedEmail} setHighlightedEmail={setHighlightedEmail} removeSticky={removeProjectsSticky}/>
           </SectionLayout>
           <SectionLayout title='Education'>
-            <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem]'}`}>
-              <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[calc(100vh-6.5rem)] rounded-xl ${removeSticky ? '' : 'sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0`}>
-                <SizingButtons />
-                <div className='w-full h-10 flex justify-center items-center rounded-t-xl bg-dirty-white'>
-                  <p className='font-semibold'>rodrigofernandes — - zsh — 120x40 </p>
-                </div>
-                <div className='w-full flex-auto py-1.5 px-2 bg-black rounded-b-xl'>
-                  <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[0]}`}</p>
-                  { educationCode[0] === completeEducationCode[0] &&
-                  <>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                    <div className='flex justify-between items-center'>
-                      <p className='font-mono text-code-green'>Master of Science in Aerospace Engineering</p>
-                      <p className='font-mono text-code-green'>09/2021 - 07/2023</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <p className='font-mono text-code-green'>Instituto Superior Técnico</p>
-                      <p className='font-mono text-code-green'>Lisboa</p>
-                    </div>
-                    <p className='font-mono text-code-green'>
-                        <br/>
-                        - Major in Aircraft, Minor in both Strucutres & Materials and Entrepreneurship and Innovation<br/>
-                        - Relevant Courses: Aeroelasticity, Product and Service Development, Engineering Economics<br/>
-                        - Extracurricular activities: JUNITEC<br/>
-                        - GPA: 17/20
-                    </p>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                    <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[1]}`}</p>
-                  </>
-                  }
-                  { educationCode[1] === completeEducationCode[1] &&
-                  <>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                    <div className='flex justify-between items-center'>
-                      <p className='font-mono text-code-green'>Bachelor of Science in Aerospace Engineering</p>
-                      <p className='font-mono text-code-green'>09/2018 - 07/202</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <p className='font-mono text-code-green'>Instituto Superior Técnico</p>
-                      <p className='font-mono text-code-green'>Lisboa</p>
-                    </div>
-                    <p className='font-mono text-code-green'>
-                        <br/>
-                        - Relevant Courses: Programming, Digital Systems, Differential and Integral Calculus I and II, Linear Algebra<br/>
-                        - Extracurricular activities: JUNITEC, Aerotec<br/>
-                        - GPA: 17/20 <br/>
-                    </p>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                    <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[2]}`}</p>
-                  </>
-                  }
-                  { educationCode[2] === completeEducationCode[2] &&
-                  <>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                    <div className='flex justify-between items-center'>
-                      <a target="_blank" href='https://www.educative.io/verify-certificate/RgxzXQFQrYv5vXDrRuX0VLxX3AO5F6' rel="noopener noreferrer"
-                        className='font-mono text-code-green underline'>
-                        TypeScript for Front-End Developers - Educative
-                      </a>
-                      <p className='font-mono text-code-green'>12/2022</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <a target="_blank" href='https://www.educative.io/verify-certificate/DR5gxyCD1BKDonDPNF8BqXG8D1ZYuG' rel="noopener noreferrer"
-                        className='font-mono text-code-green underline'>
-                        React for Front-End Developers - Educative
-                      </a>
-                      <p className='font-mono text-code-green'>11/2022</p>
-                    </div>
-                    <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
-                  </>
-                  }
-                </div>
-              </div>
-            </div>
+            <Education educationCode={educationCode} completeEducationCode={completeEducationCode} removeSticky={removeEducationSticky}/>
           </SectionLayout>
           <SectionLayout title='Contact Me'>
-            <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[24.5rem] rounded-xl flex flex-col'>
-              <div className='w-full h-28 flex flex-col justify-center items-center'>
-                <Image src={'/profile.png'} alt="Rodrigo Fernandes" width={65} height={65} className='initial-animation'/>
-                <h3 className='mt-0.5'>Rodrigo Fernandes</h3>
-              </div>
-              <div className='w-full flex-auto my-auto px-2 bg-white rounded-b-xl border-highlight-gray border-t-[0.1rem] flex justify-center items-center'>
-                <div className='w-full'>
-                  <p className='apple-bubble ml-1 mb-2 font-sans text-lg'>
-                    My Github: 
-                    <a className='underline ml-1' target="_blank" href='https://www.github.com/rodrigof1307' rel="noopener noreferrer">
-                      www.github.com/rodrigof1307
-                    </a>
-                  </p>
-                  <p className='apple-bubble ml-1 mb-2 font-sans text-lg'>
-                    My Linkedin: 
-                    <a className='underline ml-1' target="_blank" href='https://www.linkedin.com/in/rodrigof1307' rel="noopener noreferrer">
-                      www.linkedin.com/in/rodrigof1307
-                    </a>
-                  </p>
-                  <p className='apple-bubble ml-1 mb-2 font-sans text-lg'>
-                    My Email:
-                    <a className='underline ml-1' target="_blank" href='mailto: rodrigo.fernandes.1307@gmail.com' rel="noopener noreferrer">
-                      rodrigo.fernandes.1307@gmail.com
-                    </a>
-                  </p>
-                  <p className='apple-bubble ml-1 mb-2 font-sans text-lg'>
-                    My Resume: Rodrigo Fernandes</p>
-                  <p className='apple-bubble from-them ml-1 font-sans text-lg'>Feel free to hit me up!</p>
-                </div>
-              </div>
-            </div>
+            <ContactMe />
           </SectionLayout>
           <Footer/>
         </div>
