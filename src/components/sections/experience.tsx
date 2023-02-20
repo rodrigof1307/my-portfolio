@@ -2,15 +2,15 @@ import { ReactNode } from "react";
 
 import Image from "next/image";
 
-import Website from "../../public/website.svg";
-import AppStore from "../../public/appstore.svg";
-import PlayStore from "../../public/playstore.svg";
+import Website from "../../../public/website.svg";
+import AppStore from "../../../public/appstore.svg";
+import PlayStore from "../../../public/playstore.svg";
 
-import SizingButtons from "./sizingButtons"
+import SizingButtons from "./../sizingButtons"
 
 export default function Experience() {
     return(
-        <div className='w-[80rem] flex flex-col bg-dirty-white border-highlight-gray border-[0.1rem] relative rounded-xl'>
+        <div className='w-[80rem] flex flex-col bg-dirty-white border-highlight-gray border-[0.1rem] relative rounded-xl 2xl:scale-[1.15] 2xl:my-12'>
             <SizingButtons />
             <div className="w-[45rem] absolute top-2 left-[17.5rem] bg-light-gray rounded-md flex items-center justify-center">
                 <p className="my-0.5 text-sm">localhost:3000/experience?q=outgoing</p>

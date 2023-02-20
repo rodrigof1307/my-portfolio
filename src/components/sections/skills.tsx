@@ -1,36 +1,36 @@
 import Image from 'next/image'
 
-import React from '../../public/react.svg'
-import Next from '../../public/next.svg'
-import Expo from '../../public/expo.svg'
-import JavaScript from '../../public/javascript.svg'
-import TypeScript from '../../public/typescript.svg'
-import HTML from '../../public/html.svg'
-import CSS from '../../public/css.svg'
-import Tailwind from '../../public/tailwind.svg'
-import Bootstrap from '../../public/bootstrap.svg'
-import Node from '../../public/node.svg'
-import GraphQL from '../../public/graphql.svg'
-import C from '../../public/c.svg'
-import Solidity from '../../public/solidity.svg'
-import Hardhat from '../../public/hardhat.svg'
-import Ethers from '../../public/ethers.svg'
+import React from '../../../public/react.svg'
+import Next from '../../../public/next.svg'
+import Expo from '../../../public/expo.svg'
+import JavaScript from '../../../public/javascript.svg'
+import TypeScript from '../../../public/typescript.svg'
+import HTML from '../../../public/html.svg'
+import CSS from '../../../public/css.svg'
+import Tailwind from '../../../public/tailwind.svg'
+import Bootstrap from '../../../public/bootstrap.svg'
+import Node from '../../../public/node.svg'
+import GraphQL from '../../../public/graphql.svg'
+import C from '../../../public/c.svg'
+import Solidity from '../../../public/solidity.svg'
+import Hardhat from '../../../public/hardhat.svg'
+import Ethers from '../../../public/ethers.svg'
 
-import Search from '../../public/search.svg'
-import Star from '../../public/star.svg'
-import Checkered from '../../public/checkered.svg'
-import Paperplane from '../../public/paperplane.svg'
-import Game from '../../public/game.svg'
-import Hammer from '../../public/hammer.svg'
-import Grid from '../../public/grid.svg'
-import Update from '../../public/update.svg'
+import Search from '../../../public/search.svg'
+import Star from '../../../public/star.svg'
+import Checkered from '../../../public/checkered.svg'
+import Paperplane from '../../../public/paperplane.svg'
+import Game from '../../../public/game.svg'
+import Hammer from '../../../public/hammer.svg'
+import Grid from '../../../public/grid.svg'
+import Update from '../../../public/update.svg'
 
-import SizingButtons from './sizingButtons'
+import SizingButtons from '../sizingButtons'
 import { ReactNode } from 'react'
 
 export default function Skills() {
   return (
-    <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl'>
+    <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 2xl:scale-[1.15] 2xl:my-5'>
         <div className='w-1/4 p-3 flex flex-col justify-between items-center relative'>
             <SizingButtons />
             <div className='w-full mt-9'>

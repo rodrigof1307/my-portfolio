@@ -1,21 +1,17 @@
 import { useState, useEffect } from 'react'
 
-import Image from 'next/image'
-
-import Hello from '../../public/hello.svg'
-
 import Layout from '@/components/layout'
 import Navbar from '@/components/navbar'
+import Intro from '@/components/sections/intro'
 import SectionLayout from '@/components/sectionLayout'
-import Skills from '@/components/skills'
-import Experience from '@/components/experience'
-import Education from '@/components/education'
-import ContactMe from '@/components/contactMe'
-import Footer from '@/components/footer'
-import Projects from '@/components/projects'
-
+import Skills from '@/components/sections/skills'
+import Experience from '@/components/sections/experience'
+import Projects from '@/components/sections/projects'
 import NFTRenter from '@/components/projects/nftRenter'
 import LearningProjects from '@/components/projects/learningProjects'
+import Education from '@/components/sections/education'
+import ContactMe from '@/components/sections/contactMe'
+import Footer from '@/components/footer'
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('intro')
@@ -39,7 +35,6 @@ export default function IndexPage() {
   const [highlightedEmail, setHighlightedEmail] = useState(emailInfo[0])
   const [removeEducationSticky, setRemoveEducationSticky] = useState(false)
   const [educationCode, setEducationCode] = useState(['','',''])
-
 
   const completeEducationCode = ['node masters.js', 'node bachelor.js', 'node courses.js']
 
@@ -143,17 +138,12 @@ export default function IndexPage() {
     <Layout title="Rodrigo Fernandes">
       <Navbar activeSection={activeSection}/>
       <main>
-        <div id='intro' className='w-full flex justify-center items-center pt-20 pb-10 relative' style={{height: 450}}>
-          <Hello width={900} height={900*401/1217} viewBox="0 0 1217 401"/>
-          <div className='absolute top-10 left-0 w-full flex justify-center items-center' style={{height: 450}}>
-            <Image src={'/profile.png'} alt="Rodrigo Fernandes" width={325} height={325} className='initial-animation'/> 
-          </div>
-        </div>
+        <Intro />
         <div className='initial-animation'>
-          <h1 className='text-6xl font-semibold text-center' >Rodrigo Fernandes</h1>
-          <p className='text-3xl mt-3 text-center font-mono font-ultralight'>software engineer</p>
           <SectionLayout title='About Me'>
-            <p className='font-mono text-xl m-auto w-4/5 min-w-[80rem] mb-9'>Hi! My name is <b>Rodrigo Fernandes</b> and I’m a <b>Frontend</b> and <b>Mobile Software Engineer</b> based in <b>Lisbon, Portugal</b>. I’m currently broadening my skills to become a <b>Full Stack Web3 Developer</b>!</p>
+            <p className='font-mono text-xl m-auto w-[80rem] 2xl:w-[92rem] mb-9'>
+              Hi! My name is <b>Rodrigo Fernandes</b> and I’m a <b>Frontend</b> and <b>Mobile Software Engineer</b> based in <b>Lisbon, Portugal</b>. I’m currently broadening my skills to become a <b>Full Stack Web3 Developer</b>!
+            </p>
             <Skills />
           </SectionLayout>
           <SectionLayout title='Experience'>

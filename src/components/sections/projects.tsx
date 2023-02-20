@@ -1,21 +1,17 @@
-import { useState } from "react";
+import SizingButtons from "./../sizingButtons";
 
-import Image from "next/image";
-
-import SizingButtons from "./sizingButtons";
-
-import Bin from "../../public/bin.svg";
-import Box from "../../public/box.svg";
-import Circle from "../../public/circle.svg";
-import Flag from "../../public/flag.svg";
-import Left from "../../public/left.svg";
-import Left2 from "../../public/left2.svg";
-import Mail from "../../public/mail.svg";
-import Pencil from "../../public/pencil.svg";
-import Right from "../../public/right.svg";
-import Trash from "../../public/trash.svg";
-import Search from "../../public/search.svg";
-import Person from "../../public/person.svg";
+import Bin from "../../../public/bin.svg";
+import Box from "../../../public/box.svg";
+import Circle from "../../../public/circle.svg";
+import Flag from "../../../public/flag.svg";
+import Left from "../../../public/left.svg";
+import Left2 from "../../../public/left2.svg";
+import Mail from "../../../public/mail.svg";
+import Pencil from "../../../public/pencil.svg";
+import Right from "../../../public/right.svg";
+import Trash from "../../../public/trash.svg";
+import Search from "../../../public/search.svg";
+import Person from "../../../public/person.svg";
 
 interface ProjectProps {
     emailInfo: EmailInfo[];
@@ -28,8 +24,9 @@ interface ProjectProps {
 export default function Projects({emailInfo, setEmailInfo, highlightedEmail, setHighlightedEmail, removeSticky }: ProjectProps) {
 
     return (
-        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem]'}`}>
-            <div className={`bg-white border-highlight-gray border-[0.1rem] w-[80rem] h-[calc(100vh-6.5rem)] rounded-xl flex flex-row ${removeSticky ? '' : 'sticky'} top-[4.5rem] left-0`}>
+        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem] 2xl:h-[155.25rem]'}`}>
+            <div className={`w-[80rem] h-[47rem] bg-white border-highlight-gray border-[0.1rem] rounded-xl flex flex-row ${removeSticky ? '' : 'sticky'} top-[4.5rem] left-0 
+                origin-top 2xl:scale-[1.15] 2xl:h-[49rem] 2xl:top-[5.175rem] 2xl:mb-24`}>
                 <div className='w-1/3 flex flex-col justify-start items-center rounded-l-xl relative'>
                     <div className="w-full h-14 bg-dirty-white rounded-tl-xl border-highlight-gray border-b-[0.1rem] border-r-[0.1rem] flex flex-row justify-between items-center pl-[4.5rem] pr-3">
                         <SizingButtons/>

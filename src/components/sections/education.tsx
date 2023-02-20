@@ -1,4 +1,4 @@
-import SizingButtons from './sizingButtons';
+import SizingButtons from './../sizingButtons';
 
 interface EducationProps {
     removeSticky: boolean;
@@ -8,8 +8,9 @@ interface EducationProps {
 
 export default function Education({ removeSticky, educationCode, completeEducationCode }: EducationProps) {
     return (
-        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem]'}`}>
-            <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[calc(100vh-6.5rem)] rounded-xl ${removeSticky ? '' : 'sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0`}>
+        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem] h-[135rem] 2xl:h-[155.25rem]'}`}>
+            <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[47rem] rounded-xl ${removeSticky ? '' : 'sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0
+            origin-top 2xl:h-[49rem] 2xl:top-[5.175rem] 2xl:scale-[1.15] 2xl:mb-24`}>
                 <SizingButtons />
                 <div className='w-full h-10 flex justify-center items-center rounded-t-xl bg-dirty-white'>
                     <p className='font-semibold'>rodrigofernandes — - zsh — 120x40 </p>
@@ -62,6 +63,13 @@ export default function Education({ removeSticky, educationCode, completeEducati
                     { educationCode[2] === completeEducationCode[2] &&
                     <>
                     <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
+                    <div className='flex justify-between items-center'>
+                        <a target="_blank" href='https://university.alchemy.com/overview/ethereum' rel="noopener noreferrer"
+                        className='font-mono text-code-green underline'>
+                        Ethereum Developer Bootcamp - Alchemy University
+                        </a>
+                        <p className='font-mono text-code-green'>02/2023</p>
+                    </div>
                     <div className='flex justify-between items-center'>
                         <a target="_blank" href='https://www.educative.io/verify-certificate/RgxzXQFQrYv5vXDrRuX0VLxX3AO5F6' rel="noopener noreferrer"
                         className='font-mono text-code-green underline'>
