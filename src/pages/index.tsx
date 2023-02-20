@@ -32,7 +32,7 @@ export default function IndexPage() {
         body: LearningProjects()
     }
   ])
-  const [highlightedEmail, setHighlightedEmail] = useState(emailInfo[0])
+  const [highlightedEmail, setHighlightedEmail] = useState<EmailInfo | undefined>()
   const [removeEducationSticky, setRemoveEducationSticky] = useState(false)
   const [educationCode, setEducationCode] = useState(['','',''])
 
@@ -118,7 +118,19 @@ export default function IndexPage() {
       }
     }
 
-    if(window.outerWidth >= 1280) {
+    if(window.outerWidth >= 768) {
+      setHighlightedEmail(emailInfo[0])
+    } else {
+      setHighlightedEmail(undefined)
+      setEmailInfo(emailInfo.map((email) => {
+        return {
+          ...email,
+          read: false
+        }
+      }))
+    }
+
+    if(window.outerWidth >= 1230) {
       window.addEventListener('scroll', handleNavbar);
       window.addEventListener('scroll', handleProjects);
       window.addEventListener('scroll', handleEducation);
@@ -127,7 +139,7 @@ export default function IndexPage() {
     }
 
     return () => {
-      if(window.outerWidth >= 1280) {
+      if(window.outerWidth >= 1230) {
         window.removeEventListener('scroll', handleNavbar);
         window.removeEventListener('scroll', handleProjects);
         window.removeEventListener('scroll', handleEducation);
@@ -141,11 +153,11 @@ export default function IndexPage() {
   return (
     <Layout title="Rodrigo Fernandes">
       <Navbar activeSection={activeSection}/>
-      <main>
+      <main className='-mt-20 sm:-mt-10 md:-mt-6 lg:mt-0'>
         <Intro />
         <div className='initial-animation'>
           <SectionLayout title='About Me'>
-            <p className='font-mono text-xl m-auto mb-9 w-[80rem] 2xl:w-[92rem]'>
+            <p className='font-mono text-md md:text-xl m-auto mb-9 xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] mx-auto 2xl:w-[92rem]'>
               Hi! My name is <b>Rodrigo Fernandes</b> and I’m a <b>Frontend</b> and <b>Mobile Software Engineer</b> based in <b>Lisbon, Portugal</b>. I’m currently broadening my skills to become a <b>Full Stack Web3 Developer</b>!
             </p>
             <Skills />
@@ -153,10 +165,10 @@ export default function IndexPage() {
           <SectionLayout title='Experience'>
             <Experience />
           </SectionLayout>
-          <SectionLayout title='Projects'>
+          <SectionLayout title='Projects' isStickySection>
             <Projects emailInfo={emailInfo} setEmailInfo={setEmailInfo} highlightedEmail={highlightedEmail} setHighlightedEmail={setHighlightedEmail} removeSticky={removeProjectsSticky}/>
           </SectionLayout>
-          <SectionLayout title='Education'>
+          <SectionLayout title='Education' isStickySection>
             <Education educationCode={educationCode} completeEducationCode={completeEducationCode} removeSticky={removeEducationSticky}/>
           </SectionLayout>
           <SectionLayout title='Contact Me'>

@@ -37,63 +37,63 @@ html {
     stroke-dasharray: 194.51;
     stroke-dashoffset: 194.51;
     animation: sign 0.10007s linear forwards;
-    animation-delay: 0.72803s;
+    animation-delay: 0.72903s;
   }
   
   .hello_svg__part5 {
     stroke-dasharray: 278.39;
     stroke-dashoffset: 278.39;
     animation: sign 0.14323s linear forwards;
-    animation-delay: 0.8281s;
+    animation-delay: 0.8291s;
   }
   
   .hello_svg__part6 {
     stroke-dasharray: 475.79;
     stroke-dashoffset: 475.79;
     animation: sign 0.2448s linear forwards;
-    animation-delay: 0.97133s;
+    animation-delay: 0.97233s;
   }
   
   .hello_svg__part7 {
     stroke-dasharray: 428.03;
     stroke-dashoffset: 428.03;
     animation: sign 0.22073s linear forwards;
-    animation-delay: 1.21613s;
+    animation-delay: 1.21713s;
   }
   
   .hello_svg__part8 {
     stroke-dasharray: 471.00;
     stroke-dashoffset: 471.00;
     animation: sign 0.24233s linear forwards;
-    animation-delay: 1.43886s;
+    animation-delay: 1.43786s;
   }
   
   .hello_svg__part9 {
     stroke-dasharray: 437.21;
     stroke-dashoffset: 437.21;
     animation: sign 0.22495s linear forwards;
-    animation-delay: 1.80120s;
+    animation-delay: 1.68019s;
   }
   
   .hello_svg__part10 {
     stroke-dasharray: 280.30;
     stroke-dashoffset: 280.30;
     animation: sign 0.14351s linear forwards;
-    animation-delay: 2.26115s;
+    animation-delay: 1.90514s;
   }
   
   .hello_svg__part11 {
     stroke-dasharray: 263.22;
     stroke-dashoffset: 263.22;
     animation: sign 0.13543s linear forwards;
-    animation-delay: 2.40467s;
+    animation-delay: 2.04865s;
   }
 
   .hello_svg__part12 {
     stroke-dasharray: 424.83;
     stroke-dashoffset: 424.831;
     animation: sign 0.216475s linear forwards;
-    animation-delay: 2.5401s;
+    animation-delay: 2.18408s;
 }
 
 @keyframes sign {
@@ -105,7 +105,7 @@ html {
 .initial-animation {
     opacity: 0;
     animation: opacity-anim 1s ease-in-out forwards;
-    animation-delay: 2.6s;
+    animation-delay: 2.4s;
 }
 
 @keyframes opacity-anim {

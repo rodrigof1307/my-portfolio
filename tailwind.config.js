@@ -15,7 +15,13 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sfPro)'],
         mono: ['var(--font-sfMono)']
-      }
+      },
+      screens: {
+        'xxs': '180px',
+        'xs': '370px',
+        '0.5xl': '1230px',
+        'xl': '1390px',
+      },
     }
   },
   variants: {},

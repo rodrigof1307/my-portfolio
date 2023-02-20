@@ -3,7 +3,13 @@ import Image from "next/image"
 export default function NFTRenter() {
 
     return (
-        <div className="overflow-scroll overscroll-contain h-[calc(100vh-14.7rem)] min-h-[30rem] 2xl:h-[calc(100vh-23.1rem)] 2xl:min-h-[37rem] nft-renter">
+        <div className="overflow-scroll overscroll-contain nft-renter
+        pb-4
+        h-[38.6rem]
+        md:h-[36rem]
+        lg:h-[calc(100vh-13rem)] lg:min-h-[25rem] 
+        xl:h-[calc(100vh-14.7rem)] xl:min-h-[30rem] 
+        2xl:h-[calc(100vh-23.1rem)] 2xl:min-h-[37rem]">
             <p>
                 The <b>NFT Renter dApp</b> was done as the final project of the <b>"Ethereum Developer Bootcamp"</b> from <b>Alchemy University</b> (
                 <a target="_blank" href='https://university.alchemy.com/overview/ethereum' rel="noopener noreferrer" className="underline">https://university.alchemy.com/overview/ethereum</a>

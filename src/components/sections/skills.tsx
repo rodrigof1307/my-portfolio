@@ -5,6 +5,8 @@ import Next from '../../../public/next.svg'
 import Expo from '../../../public/expo.svg'
 import JavaScript from '../../../public/javascript.svg'
 import TypeScript from '../../../public/typescript.svg'
+import Redux from '../../../public/redux.svg'
+import Jest from '../../../public/jest.svg'
 import HTML from '../../../public/html.svg'
 import CSS from '../../../public/css.svg'
 import Tailwind from '../../../public/tailwind.svg'
@@ -30,9 +32,9 @@ import { ReactNode } from 'react'
 
 export default function Skills() {
   return (
-    <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 
-    2xl:scale-[1.15] 2xl:mt-[4.5rem] 2xl:mb-6 -mb-80 lg:-mb-44 xl:-mb-0 origin-left'>
-        <div className='w-1/4 p-3 flex flex-col justify-between items-center relative'>
+    <div className='xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] mx-auto flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 
+    2xl:scale-[1.15] 2xl:mt-[4.5rem] 2xl:mx-0 2xl:mb-6 mb-[-29rem] md:-mb-80 lg:-mb-44 0.5xl:-mb-24 xl:-mb-0 origin-left'>
+        <div className='w-1/4 p-3 hidden md:flex flex-col justify-between items-center relative'>
             <SizingButtons />
             <div className='w-full mt-9'>
                 <div className='h-[2.3rem] mx-1.5 mb-4 rounded-lg bg-light-gray flex flex-row items-center justify-start pl-2.5'>
@@ -66,20 +68,22 @@ export default function Skills() {
                 <h4 className='font-semibold ml-2.5'>Rodrigo Fernandes</h4> 
             </div>
         </div>
-        <div className='p-10 flex flex-1 flex-col bg-white border-highlight-gray border-l-[0.1rem] rounded-r-xl'>
+        <div className='p-10 flex flex-1 flex-col bg-white border-highlight-gray md:border-l-[0.1rem] rounded-xl md:rounded-l-none'>
             <h2 className='font-semibold text-4xl mb-2.5'>Skills</h2>
             <div className='w-full h-[0.0625rem] bg-highlight-gray'>
                 <br/>
             </div>
             <div>
                 <p className='text-lg font-medium text-black mt-2.5 mb-1'>Frontend & Mobile</p>
-                <div className='w-full grid grid-cols-4 gap-y-2 gap-x-0'>
+                <div className='w-full grid grid-cols-2 md:grid-cols-4 gap-y-2 gap-x-0'>
                     <TechInfo name='React' Image={React}/>
                     <TechInfo name='Next.js' Image={Next}/>
                     <TechInfo name='React Native' Image={React}/>
                     <TechInfo name='Expo' Image={Expo}/>
                     <TechInfo name='JavaScript' Image={JavaScript}/>
                     <TechInfo name='TypeScript' Image={TypeScript}/>
+                    <TechInfo name='Redux' Image={Redux}/>
+                    <TechInfo name='Jest' Image={Jest}/>
                     <TechInfo name='HTML' Image={HTML}/>
                     <TechInfo name='CSS' Image={CSS}/>
                     <TechInfo name='Tailwind CSS' Image={Tailwind}/>
@@ -88,7 +92,7 @@ export default function Skills() {
             </div>
             <div>
                 <p className='text-lg font-medium text-black mt-2.5 mb-1'>Backend & Blockchain</p>
-                <div className='w-full grid grid-cols-4 gap-y-2 gap-x-0'>
+                <div className='w-full grid grid-cols-2 md:grid-cols-4 gap-y-2 gap-x-0'>
                     <TechInfo name='Node.js' Image={Node}/>
                     <TechInfo name='GraphQL' Image={GraphQL}/>
                     <TechInfo name='C' Image={C}/>

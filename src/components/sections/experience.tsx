@@ -10,33 +10,39 @@ import SizingButtons from "./../sizingButtons"
 
 export default function Experience() {
     return(
-        <div className='w-[80rem] flex flex-col bg-dirty-white border-highlight-gray border-[0.1rem] relative rounded-xl 
-        2xl:scale-[1.15] 2xl:my-12 mb-[-27rem] lg:-mb-64 xl:-mb-0'>
+        <div className='flex xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] flex-col bg-dirty-white border-highlight-gray border-[0.1rem] relative rounded-xl 
+        2xl:scale-[1.15] 2xl:my-12 mb-[-44rem] md:mb-[-27rem] lg:-mb-64 0.5xl:-mb-32 xl:-mb-0'>
             <SizingButtons />
-            <div className="w-[45rem] absolute top-2 left-[17.5rem] bg-light-gray rounded-md flex items-center justify-center">
+            <div className="xxs:w-[15rem] xs:w-[20rem] md:w-[45rem] absolute top-2 xxs:left-[9rem] xs:left-[10rem] md:left-[17.5rem] bg-light-gray rounded-md flex items-center justify-center">
                 <p className="my-0.5 text-sm">localhost:3000/experience?q=outgoing</p>
             </div>
-            <div className="flex h-[52.75rem] flex-row justify-between items-start mt-10 px-8 py-12 bg-gradient-to-r from-[#02112E] to-[#17397B] border-highlight-gray border-t-[0.1rem] rounded-b-xl">
+            <div className="flex flex-col md:h-[52.75rem] md:flex-row justify-between items-start mt-10 px-8 py-12 bg-gradient-to-r from-[#02112E] to-[#17397B] border-highlight-gray border-t-[0.1rem] rounded-b-xl">
                 <div className="w-full flex flex-col justify-start items-start mr-5">
                     <div className="w-full flex flex-row justify-between items-center">
                         <h3 className="w-[25.75rem] font-semibold text-4xl text-white">Co-Founder - <span className="text-apple-blue font-bold">outGoing</span></h3>
                         <>
-                            <LinkButtons href={'https://apps.apple.com/pt/app/outgoing/id1585889075'} name="App Store">
-                                <AppStore width={25} height={25} viewBox='0 0 25 25' />
-                            </LinkButtons>
-                            <LinkButtons href={'https://play.google.com/store/apps/details?id=com.rodrigofernandes.outgoing'} name="Play Store">
-                                <PlayStore width={25} height={25} viewBox='0 0 25 25' />
-                            </LinkButtons> 
-                            <LinkButtons href={'https://www.outgoingapp.net'} name="Website">
-                                <Website width={25} height={25} viewBox='0 0 27.9375 24.4336' />
-                            </LinkButtons>
+                            <div className="hidden md:flex">
+                                <LinkButtons href={'https://apps.apple.com/pt/app/outgoing/id1585889075'} name="App Store">
+                                    <AppStore width={25} height={25} viewBox='0 0 25 25' />
+                                </LinkButtons>
+                            </div>
+                            <div className="hidden md:flex">
+                                <LinkButtons href={'https://play.google.com/store/apps/details?id=com.rodrigofernandes.outgoing'} name="Play Store">
+                                    <PlayStore width={25} height={25} viewBox='0 0 25 25' />
+                                </LinkButtons> 
+                            </div>
+                            <div className="flex">
+                                <LinkButtons href={'https://www.outgoingapp.net'} name="Website">
+                                    <Website width={25} height={25} viewBox='0 0 27.9375 24.4336' />
+                                </LinkButtons>
+                            </div>
                         </>
                     </div>
-                    <p className="text-white font-thin text-xl mt-1 mb-3">11/2021 - Present</p>
+                    <p className="text-white font-thin text-xl mt-1 mb-3">Nov. 2021 - Present</p>
                     <div className="ml-2">
                         <p className="text-white text-lg tracking-[0.01rem]">
                             <HL>outGoing</HL> facilitates the purchase of <HL>tickets</HL> and <HL>consumables</HL> at events as well as their management through a digital platform. 
-                            The app currently has over 2500 users and has hosted 4 events in Lisbon, totalling 600 tickets and 5500 consumables sold.
+                            The app currently has over 5000 users and has hosted 8 events in Lisbon, totalling 3500 tickets and 6000 consumables sold.
                             <br/><br/>
                             As co-founder, I’ve worn many hats. Here’s what I do as:
                         </p>
@@ -49,19 +55,23 @@ export default function Experience() {
                         <RoleTitle title="Mobile Developer"/>
                         <p className="text-white text-lg tracking-[0.01rem]">
                             I am responsible for the design and development of our app, which has been built using <HL>React Native</HL>, <HL>Expo</HL>, <HL>TypeScript</HL>, 
-                            <HL>JavaScript</HL>, and connected to our AWS backend using <HL>GraphQL</HL>. I’m also in charge of submitting the app to the <HL>Play Store</HL> and 
-                            <HL> App Store</HL>. The app is used by the public to <HL>find events</HL>, <HL>buy tickets</HL> and <HL>consumables</HL> as well as <HL>share consumables </HL>  
+                            <HL>JavaScript</HL>, and connected to our AWS backend using <HL>GraphQL</HL>. The app is used by the public to <HL>find events</HL>, <HL>buy tickets</HL> and <HL>consumables</HL> as well as <HL>share consumables </HL>  
                             with friends. The collaborators have a dedicated interface to <HL>validate tickets</HL> and <HL>consumable</HL> purchases.
                         </p>
-                        <RoleTitle title="Product Manager"/>
+                        <RoleTitle title="Project Manager"/>
                         <p className="text-white text-lg tracking-[0.01rem]">
-                        I am <HL>organized</HL> and <HL>led</HL> a team of three using an <HL>Agile methodology</HL> based on sprints with clear deadlines and goals to achieve both 
+                        I <HL>organized</HL> and <HL>led</HL> a team of three developers using an <HL>Agile methodology</HL> based on sprints with clear deadlines and goals to achieve both 
                         business and development goals. I was also responsible for <HL>pitching</HL> our product to <HL>clients</HL> and <HL>partners</HL> and coordinating its 
                         implementation on their events.
                         </p>
                     </div>
                 </div>
-                <div className="w-[26.75rem] m-0 flex flex-col items-end group">
+                <div className="w-[26.75rem] mt-8 mb-8 ml-[4rem] flex md:hidden flex-row items-end group">
+                    <Image className="mr-[-4rem]" src={'/consume.png'} alt="outGoing App Consume" width={190} height={383}/>
+                    <Image className="mb-[-3rem] z-10" src={'/events.png'} alt="outGoing App Events" width={190} height={395}/>
+                    <Image className="ml-[-4rem]" src={'/leaderboard.png'} alt="outGoing App Leaderboard" width={191} height={382}/>
+                </div>
+                <div className="w-[26.75rem] m-0 hidden md:flex flex-col items-end group">
                     <Image className="group-hover:-mr-2 group-hover:-mt-2 group-hover:scale-105 transition-all" src={'/events.png'} alt="outGoing App Events" width={190} height={395}/>
                     <Image className="-mt-44 mr-[8rem] z-10 group-hover:mr-[9rem] group-hover:-mt-40 group-hover:scale-105 transition-all" src={'/consume.png'} alt="outGoing App Consume" width={190} height={383}/>
                     <Image className="-mt-48 mr-2 group-hover:-mt-44 group-hover:-mr-2 group-hover:scale-105 transition-all" src={'/leaderboard.png'} alt="outGoing App Leaderboard" width={191} height={382}/>
