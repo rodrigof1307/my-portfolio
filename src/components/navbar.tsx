@@ -35,7 +35,7 @@ export default function Navbar({activeSection}: navbarProps) {
                 <a target="_blank" href="mailto: rodrigo.fernandes.1307@gmail.com" rel="noopener noreferrer">
                     <FiMail className='text-2xl'/>
                 </a>
-                <a target="_blank" href="https://www.linkedin.com/in/rodrigof1307/" rel="noopener noreferrer">
+                <a target="_blank" href={'/RodrigoFernandesCV.pdf'} rel="noopener noreferrer">
                     <FiFile className='text-2xl'/>
                 </a>
                 <div className='flex row items-center'>

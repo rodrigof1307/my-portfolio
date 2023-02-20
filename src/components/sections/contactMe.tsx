@@ -29,7 +29,10 @@ export default function ContactMe() {
                     </a>
                     </p>
                     <p className='apple-bubble ml-1 mb-2 font-sans text-lg'>
-                    My Resume: Rodrigo Fernandes</p>
+                    My Resume:                
+                    <a className='underline ml-1' target="_blank" href='/RodrigoFernandesCV.pdf' rel="noopener noreferrer">
+                        Rodrigo Fernandes
+                    </a></p>
                     <p className='apple-bubble from-them ml-1 font-sans text-lg'>Feel free to hit me up!</p>
                 </div>
             </div>

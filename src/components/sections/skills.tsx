@@ -31,7 +31,7 @@ import { ReactNode } from 'react'
 export default function Skills() {
   return (
     <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 
-    2xl:scale-[1.15] 2xl:my-5 -mb-80 lg:-mb-44 xl:-mb-0'>
+    2xl:scale-[1.15] 2xl:mt-[4.5rem] 2xl:mb-6 -mb-80 lg:-mb-44 xl:-mb-0 origin-left'>
         <div className='w-1/4 p-3 flex flex-col justify-between items-center relative'>
             <SizingButtons />
             <div className='w-full mt-9'>
