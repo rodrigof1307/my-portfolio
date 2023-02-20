@@ -24,9 +24,9 @@ interface ProjectProps {
 export default function Projects({emailInfo, setEmailInfo, highlightedEmail, setHighlightedEmail, removeSticky }: ProjectProps) {
 
     return (
-        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem] 2xl:h-[155.25rem]'}`}>
-            <div className={`w-[80rem] h-[47rem] bg-white border-highlight-gray border-[0.1rem] rounded-xl flex flex-row ${removeSticky ? '' : 'sticky'} top-[4.5rem] left-0 
-                origin-top 2xl:scale-[1.15] 2xl:h-[49rem] 2xl:top-[5.175rem] 2xl:mb-24`}>
+        <div className={`relative w-[80rem] ${removeSticky ? '' : 'xl:h-[135rem] 2xl:h-[155.25rem]'} mb-[-29rem] lg:-mb-56 xl:-mb-0`}>
+            <div className={`w-[80rem] h-[calc(100vh-6.5rem)] min-h-[45rem] bg-white border-highlight-gray border-[0.1rem] rounded-xl flex flex-row ${removeSticky ? '' : 'xl:sticky'} top-[4.5rem] left-0 
+                origin-top 2xl:scale-[1.15] 2xl:h-[calc(100vh-15rem)] 2xl:min-h-[46rem] 2xl:top-[5.175rem] 2xl:mb-24`}>
                 <div className='w-1/3 flex flex-col justify-start items-center rounded-l-xl relative'>
                     <div className="w-full h-14 bg-dirty-white rounded-tl-xl border-highlight-gray border-b-[0.1rem] border-r-[0.1rem] flex flex-row justify-between items-center pl-[4.5rem] pr-3">
                         <SizingButtons/>
@@ -107,7 +107,7 @@ const EmailSummary = ({index, highlightedEmail, setHighlightedEmail, emailInfo, 
         setHighlightedEmail({...emailInfo[index], read: true})
         const html = document.querySelectorAll("html")
         const sections = document.querySelectorAll("section");
-        if(!removeSticky) {
+        if(!removeSticky && window.outerWidth >= 1280) {
             html[0].style.scrollBehavior = 'auto'
             if(index == 0) {
                 html[0].scrollTo({ top: (0.15)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto' })
@@ -122,7 +122,7 @@ const EmailSummary = ({index, highlightedEmail, setHighlightedEmail, emailInfo, 
 
     return(
         <div>
-            <div className={`h-[6.2rem] flex flex-row justify-start pt-1.5 mx-2 ${isHighlighted ? 'bg-apple-blue rounded-md' : ''}`} onClick={handleClick}>
+            <div className={`h-[6.2rem] flex flex-row justify-start pt-1.5 mx-2 ${isHighlighted ? 'bg-apple-blue rounded-md' : ''} cursor-pointer`} onClick={handleClick}>
                 <div className="w-8 flex flex-col justify-start items-center">
                     {!emailInfo[index].read && <div className="w-2.5 h-2.5 bg-apple-blue rounded-full mt-[0.35rem]" />}
                 </div>

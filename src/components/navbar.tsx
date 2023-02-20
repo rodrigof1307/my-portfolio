@@ -12,8 +12,10 @@ interface improvedLinkProps extends navbarProps {
 
 export default function Navbar({activeSection}: navbarProps) {
     return (
-        <nav className='flex justify-between items-center w-full py-2 rounded-b-xl border-2 border-highlight-gray bg-dirty-white initial-animation fixed top-0 left-0 right-0 z-10'>
-            <div className='flex justify-around items-center w-[41rem]'>
+        <nav className='w-full justify-between items-center py-2 rounded-b-xl border-2 border-highlight-gray bg-dirty-white initial-animation fixed top-0 left-0 right-0 z-10
+        h-10 xl:h-auto hidden lg:flex'>
+            <div className='flex justify-around items-center w-[41rem]
+            scale-[0.80] origin-left xl:scale-100'>
                 <Apple className='mb-0.5'/>
                 <ImprovedLink text='Intro' activeSection={activeSection}/>
                 <ImprovedLink text='About Me' activeSection={activeSection}/>
@@ -22,7 +24,8 @@ export default function Navbar({activeSection}: navbarProps) {
                 <ImprovedLink text='Education' activeSection={activeSection}/>
                 <ImprovedLink text='Contact Me' activeSection={activeSection}/>
             </div>
-            <div className='flex justify-around items-center w-[31rem]'>
+            <div className='flex justify-around items-center w-[31rem]
+            scale-[0.80] origin-right xl:scale-100'>
                 <a target="_blank" href="https://github.com/rodrigof1307" rel="noopener noreferrer">
                     <FiGithub className='text-2xl'/>
                 </a>

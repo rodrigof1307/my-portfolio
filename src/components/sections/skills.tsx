@@ -30,7 +30,8 @@ import { ReactNode } from 'react'
 
 export default function Skills() {
   return (
-    <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 2xl:scale-[1.15] 2xl:my-5'>
+    <div className='w-[80rem] flex flex-row bg-dirty-white border-highlight-gray border-[0.1rem] rounded-xl 
+    2xl:scale-[1.15] 2xl:my-5 -mb-80 lg:-mb-44 xl:-mb-0'>
         <div className='w-1/4 p-3 flex flex-col justify-between items-center relative'>
             <SizingButtons />
             <div className='w-full mt-9'>
@@ -71,7 +72,7 @@ export default function Skills() {
                 <br/>
             </div>
             <div>
-                <p className='text-lg font-medium text-black mt-2.5 mb-1'>Frontend</p>
+                <p className='text-lg font-medium text-black mt-2.5 mb-1'>Frontend & Mobile</p>
                 <div className='w-full grid grid-cols-4 gap-y-2 gap-x-0'>
                     <TechInfo name='React' Image={React}/>
                     <TechInfo name='Next.js' Image={Next}/>

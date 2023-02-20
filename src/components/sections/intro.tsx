@@ -4,7 +4,7 @@ import Hello from '../../../public/hello.svg'
 
 export default function Intro() {
     return(
-        <div id='intro' className='origin-top 2xl:scale-[1.15] 2xl:mb-10'>
+        <div id='intro' className='origin-top scale-[0.7] -mb-48 lg:scale-90 lg:-mb-20 xl:scale-100 xl:mb-0 2xl:scale-[1.15] 2xl:mb-10'>
           <div className='w-full flex justify-center items-center pt-20 pb-10 relative' style={{height: 450}}>
             <Hello width={900} height={900*401/1217} viewBox="0 0 1217 401"/>
             <div className='absolute top-10 left-0 w-full flex justify-center items-center' style={{height: 450}}>

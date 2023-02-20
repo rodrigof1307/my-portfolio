@@ -2,7 +2,8 @@ import Image from 'next/image'
 
 export default function ContactMe() {
     return (
-        <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[24.5rem] rounded-xl flex flex-col origin-top 2xl:scale-[1.15] 2xl:mb-10'>
+        <div className='bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[24.5rem] rounded-xl flex flex-col origin-top 2xl:scale-[1.15] 2xl:mb-10
+        -mb-56 lg:-mb-36 xl:-mb-0'>
             <div className='w-full h-28 flex flex-col justify-center items-center'>
                 <Image src={'/profile.png'} alt="Rodrigo Fernandes" width={65} height={65} className='initial-animation'/>
                 <h3 className='mt-0.5'>Rodrigo Fernandes</h3>

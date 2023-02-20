@@ -64,7 +64,7 @@ export default function IndexPage() {
         if(0.15 <= ratio && ratio < 0.45) {
           setHighlightedEmail(emailInfo[0])
           if(nftRenter[0]) {
-            nftRenter[0].scrollTo({ top: (ratio-0.15)*1500, behavior: 'smooth'})
+            nftRenter[0].scrollTo({ top: (nftRenter[0].scrollHeight - nftRenter[0].clientHeight)/0.3*(ratio-0.15), behavior: 'smooth'})
           }
         } if(ratio >= 0.5) {
           setEmailInfo(emailInfo.map((email) => {
@@ -118,18 +118,22 @@ export default function IndexPage() {
       }
     }
 
-    window.addEventListener('scroll', handleNavbar);
-    window.addEventListener('scroll', handleProjects);
-    window.addEventListener('scroll', handleEducation);
-    window.addEventListener('scroll', handleEducationDone);
-    window.addEventListener('scroll', handleRemoveSticky);
+    if(window.outerWidth >= 1280) {
+      window.addEventListener('scroll', handleNavbar);
+      window.addEventListener('scroll', handleProjects);
+      window.addEventListener('scroll', handleEducation);
+      window.addEventListener('scroll', handleEducationDone);
+      window.addEventListener('scroll', handleRemoveSticky);
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleNavbar);
-      window.removeEventListener('scroll', handleProjects);
-      window.removeEventListener('scroll', handleEducation);
-      window.removeEventListener('scroll', handleEducationDone);
-      window.removeEventListener('scroll', handleRemoveSticky);
+      if(window.outerWidth >= 1280) {
+        window.removeEventListener('scroll', handleNavbar);
+        window.removeEventListener('scroll', handleProjects);
+        window.removeEventListener('scroll', handleEducation);
+        window.removeEventListener('scroll', handleEducationDone);
+        window.removeEventListener('scroll', handleRemoveSticky);
+      }
     };
   }, []);
 
@@ -141,7 +145,7 @@ export default function IndexPage() {
         <Intro />
         <div className='initial-animation'>
           <SectionLayout title='About Me'>
-            <p className='font-mono text-xl m-auto w-[80rem] 2xl:w-[92rem] mb-9'>
+            <p className='font-mono text-xl m-auto mb-9 w-[80rem] 2xl:w-[92rem]'>
               Hi! My name is <b>Rodrigo Fernandes</b> and I’m a <b>Frontend</b> and <b>Mobile Software Engineer</b> based in <b>Lisbon, Portugal</b>. I’m currently broadening my skills to become a <b>Full Stack Web3 Developer</b>!
             </p>
             <Skills />

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import SizingButtons from './../sizingButtons';
 
 interface EducationProps {
@@ -7,17 +9,24 @@ interface EducationProps {
 }
 
 export default function Education({ removeSticky, educationCode, completeEducationCode }: EducationProps) {
+    const [isMinimumAnimationSize, setIsMinimumAnimationSize] = useState(true);
+
+    useEffect(() => {
+        setIsMinimumAnimationSize(window.outerWidth >= 1280)
+    }, [])
+
     return (
-        <div className={`relative w-[80rem] ${removeSticky ? '' : 'h-[135rem] h-[135rem] 2xl:h-[155.25rem]'}`}>
-            <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[47rem] rounded-xl ${removeSticky ? '' : 'sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0
-            origin-top 2xl:h-[49rem] 2xl:top-[5.175rem] 2xl:scale-[1.15] 2xl:mb-24`}>
+        <div className={`relative w-[80rem] ${removeSticky ? '' : 'xl:h-[135rem] 2xl:h-[155.25rem]'} mb-[-30rem] lg:-mb-56 xl:-mb-0`}>
+            <div className={`bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] h-[calc(100vh-6.5rem)] min-h-[45rem] rounded-xl ${removeSticky ? '' : 'xl:sticky'}  flex flex-col justify-start items-center top-[4.5rem] left-0
+            origin-top 2xl:h-[calc(100vh-15rem)] 2xl:min-h-[46rem] 2xl:top-[5.175rem] 2xl:scale-[1.15] 2xl:mb-24`}
+            suppressHydrationWarning>
                 <SizingButtons />
                 <div className='w-full h-10 flex justify-center items-center rounded-t-xl bg-dirty-white'>
                     <p className='font-semibold'>rodrigofernandes — - zsh — 120x40 </p>
                 </div>
                 <div className='w-full flex-auto py-1.5 px-2 bg-black rounded-b-xl'>
                     <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[0]}`}</p>
-                    { educationCode[0] === completeEducationCode[0] &&
+                    { ((!isMinimumAnimationSize) || educationCode[0] === completeEducationCode[0]) &&
                     <>
                     <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
                     <div className='flex justify-between items-center'>
@@ -39,12 +48,12 @@ export default function Education({ removeSticky, educationCode, completeEducati
                     <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[1]}`}</p>
                     </>
                     }
-                    { educationCode[1] === completeEducationCode[1] &&
+                    { ((!isMinimumAnimationSize) || educationCode[1] === completeEducationCode[1]) &&
                     <>
                     <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
                     <div className='flex justify-between items-center'>
                         <p className='font-mono text-code-green'>Bachelor of Science in Aerospace Engineering</p>
-                        <p className='font-mono text-code-green'>09/2018 - 07/202</p>
+                        <p className='font-mono text-code-green'>09/2018 - 07/2021</p>
                     </div>
                     <div className='flex justify-between items-center'>
                         <p className='font-mono text-code-green'>Instituto Superior Técnico</p>
@@ -60,7 +69,7 @@ export default function Education({ removeSticky, educationCode, completeEducati
                     <p className='font-mono text-code-green'>{`rodrigofernandes@Macbook-Pro-de-Rodrigo ~ % ${educationCode[2]}`}</p>
                     </>
                     }
-                    { educationCode[2] === completeEducationCode[2] &&
+                    { ((!isMinimumAnimationSize) || educationCode[2] === completeEducationCode[2]) &&
                     <>
                     <p className='font-mono text-code-green tracking-wider'>{'*'.repeat(118)}</p>
                     <div className='flex justify-between items-center'>
