@@ -1,5 +1,6 @@
 export default function LearningProjects() {
     return (
+        <div className="h-[36rem] lg:h-auto">
         <p>
             <b>Learning Projects</b> is a Github repository that contains <b>small simple projects</b> that I built to learn new technologies, frameworks, APIs, or programming languages.
             <br/><br/>
@@ -16,5 +17,6 @@ export default function LearningProjects() {
                 https://github.com/rodrigof1307/learning-projects
             </a>
         </p>
+        </div>
     )
 } 
