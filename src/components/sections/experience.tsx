@@ -42,7 +42,7 @@ export default function Experience() {
                     <div className="ml-2">
                         <p className="text-white text-lg tracking-[0.01rem]">
                             <HL>outGoing</HL> facilitates the purchase of <HL>tickets</HL> and <HL>consumables</HL> at events as well as their management through a digital platform. 
-                            The app currently has over 5000 users and has hosted 8 events in Lisbon, totalling 3500 tickets and 6000 consumables sold.
+                            The app currently has over 6500 users and has hosted 11 events in Lisbon, totalling 3500 tickets and 17000 consumables sold.
                             <br/><br/>
                             As co-founder, I’ve worn many hats. Here’s what I do as:
                         </p>
