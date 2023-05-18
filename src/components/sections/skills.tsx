@@ -17,6 +17,8 @@ import C from '../../../public/c.svg'
 import Solidity from '../../../public/solidity.svg'
 import Hardhat from '../../../public/hardhat.svg'
 import Ethers from '../../../public/ethers.svg'
+import Wagmi from '../../../public/wagmi.svg'
+import Viem from '../../../public/viem.svg'
 
 import Search from '../../../public/search.svg'
 import Star from '../../../public/star.svg'
@@ -99,6 +101,8 @@ export default function Skills() {
                     <TechInfo name='Solidity' Image={Solidity}/>
                     <TechInfo name='Hardhat' Image={Hardhat}/>
                     <TechInfo name='ethers.js' Image={Ethers}/>
+                    <TechInfo name='wagmi' Image={Wagmi}/>
+                    <TechInfo name='viem' Image={Viem}/>
                 </div>
             </div>
         </div>

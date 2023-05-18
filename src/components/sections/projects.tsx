@@ -34,7 +34,7 @@ export default function Projects({emailInfo, setEmailInfo, highlightedEmail, set
 }
 
 const ProjectDesktop = ({emailInfo, setEmailInfo, highlightedEmail, setHighlightedEmail, removeSticky }: ProjectProps) => (
-    <div className={`hidden md:flex relative w-[80rem] ${removeSticky ? '' : '0.5xl:h-[110rem] xl:h-[135rem] 2xl:h-[155.25rem]'} -mb-[22rem] lg:-mb-56 0.5xl:-mb-28 xl:-mb-0`}>
+    <div className={`hidden md:flex relative w-[80rem] ${removeSticky ? '' : '0.5xl:h-[175rem] xl:h-[214.5rem] 2xl:h-[247.875rem]'} -mb-[22rem] lg:-mb-56 0.5xl:-mb-28 xl:-mb-0`}>
         <div className={`w-[80rem] bg-white border-highlight-gray border-[0.1rem] rounded-xl flex flex-row 
             ${removeSticky ? '' : '0.5xl:sticky'} left-0 origin-top 
             0.5xl:h-[calc(100vh-5rem)] 0.5xl:min-h-[44rem] 0.5xl:top-[4.1rem] 0.5xl:scale-[0.9] 0.5xl:mb-0
@@ -193,9 +193,11 @@ const EmailSummary = ({index, highlightedEmail, setHighlightedEmail, emailInfo, 
         if(!removeSticky && window.outerWidth >= 1230) {
             html[0].style.scrollBehavior = 'auto'
             if(index == 0) {
-                html[0].scrollTo({ top: (0.15)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto' })
+                html[0].scrollTo({ top: (0.05)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto' })
+            } if(index == 1) {
+                html[0].scrollTo({ top: (0.35)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto' })
             } else {
-                html[0].scrollTo({ top: (0.5)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto'})
+                html[0].scrollTo({ top: (0.7)*(sections[3].offsetTop - sections[2].offsetTop) + sections[2].offsetTop, behavior: 'auto'})
             }
             html[0].style.scrollBehavior = 'smooth'
         }

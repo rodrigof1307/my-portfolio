@@ -16,7 +16,7 @@ export default function Education({ removeSticky, educationCode, completeEducati
     }, [])
 
     return (
-        <div className={`relative xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] ${removeSticky ? '' : '0.5xl:h-[110rem] xl:h-[135rem] 2xl:h-[155.25rem]'} -mb-[23.5rem] md:-mb-[20.5rem] lg:-mb-52 0.5xl:-mb-28 xl:-mb-0`}>
+        <div className={`relative xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] ${removeSticky ? '' : '0.5xl:h-[110rem] xl:h-[135rem] 2xl:h-[155.25rem]'} -mb-[22rem] md:-mb-[20.5rem] lg:-mb-52 0.5xl:-mb-28 xl:-mb-0`}>
             <div className={`${removeSticky ? '' : '0.5xl:sticky'} bg-dirty-white border-highlight-gray border-[0.1rem] w-[80rem] rounded-xl flex
             flex-col justify-start items-center left-0 origin-top
             xxs:w-[33rem] xs:w-[40rem] md:w-[80rem] mx-auto
@@ -34,7 +34,7 @@ export default function Education({ removeSticky, educationCode, completeEducati
                     <>
                     <p className='font-mono text-code-green tracking-[0.042rem] md:tracking-[0.05rem] overflow-hidden'>{'*'.repeat(118)}</p>
                     <div className='flex justify-between items-center'>
-                        <p className='font-mono text-code-green'>Master of Science in Aerospace Engineering</p>
+                        <p className='font-mono text-code-green'>MSc in Aerospace Engineering</p>
                         <p className='font-mono text-code-green'>Sept. 2021 - July 2023</p>
                     </div>
                     <div className='flex justify-between items-center'>
@@ -56,7 +56,7 @@ export default function Education({ removeSticky, educationCode, completeEducati
                     <>
                     <p className='font-mono text-code-green tracking-[0.042rem] md:tracking-[0.05rem] overflow-hidden'>{'*'.repeat(118)}</p>
                     <div className='flex justify-between items-center'>
-                        <p className='font-mono text-code-green'>Bachelor of Science in Aerospace Engineering</p>
+                        <p className='font-mono text-code-green'>BSc in Aerospace Engineering</p>
                         <p className='font-mono text-code-green'>Sept. 2018 - July 2021</p>
                     </div>
                     <div className='flex justify-between items-center'>
@@ -82,20 +82,6 @@ export default function Education({ removeSticky, educationCode, completeEducati
                         Ethereum Developer Bootcamp - Alchemy University
                         </a>
                         <p className='font-mono text-code-green'>Feb. 2023</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                        <a target="_blank" href='https://www.educative.io/verify-certificate/RgxzXQFQrYv5vXDrRuX0VLxX3AO5F6' rel="noopener noreferrer"
-                        className='font-mono text-code-green underline'>
-                        TypeScript for Front-End Developers - Educative
-                        </a>
-                        <p className='font-mono text-code-green'>Dec. 2022</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                        <a target="_blank" href='https://www.educative.io/verify-certificate/DR5gxyCD1BKDonDPNF8BqXG8D1ZYuG' rel="noopener noreferrer"
-                        className='font-mono text-code-green underline'>
-                        React for Front-End Developers - Educative
-                        </a>
-                        <p className='font-mono text-code-green'>Nov. 2022</p>
                     </div>
                     <p className='font-mono text-code-green tracking-[0.042rem] md:tracking-[0.05rem] overflow-hidden'>{'*'.repeat(118)}</p>
                     </>

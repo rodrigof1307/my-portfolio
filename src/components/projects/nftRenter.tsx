@@ -13,15 +13,15 @@ export default function NFTRenter() {
             <p>
                 The <b>NFT Renter dApp</b> was done as the final project of the <b>"Ethereum Developer Bootcamp"</b> from <b>Alchemy University</b> (
                 <a target="_blank" href='https://university.alchemy.com/overview/ethereum' rel="noopener noreferrer" className="underline">https://university.alchemy.com/overview/ethereum</a>
-                ). It's goal was to develop a decentralized application that allowed users to safely <b>rent NFTs from other users</b> without collateral.
+                ). It's goal was to develop a decentralized application that allowed users to <b>rent NFTs from other users</b> with both collateralized and non-collateralized options being available.
+                <br/><br/> 
+                On <b>collateralized loans</b>, the <b>owner</b> defines the <b>daily rate and collateral value, deploys a Rent Escrow Smart Contract</b> and <b>transfers his NFT</b> to the <b>Smart Contract</b>. The <b>renter</b> must then <b>pay the rental value</b> and <b>transfer the collateral</b> to the escrow smart contract in order to receive the original NFT on his wallet. Once the rental is over, the <b>renter</b> must <b>return the NFT</b> in order to <b>receive the collateral</b> otherwise the <b>owner</b> can <b>claim the collateral</b>.
                 <br/><br/>
-                The renting system works through an escrow smart contract that guarantees a secure experience for both sides. To <b>lend</b> an <b>NFT</b>, the <b>owner</b> defines the <b>rental guidelines, deploys a Rent Smart Contract</b> and <b>transfers his NFT</b> to the <b>Smart Contract</b>. The <b>renter</b> will then <b>transfer</b> to the Smart Contract the <b>rental value</b> that corresponds to the pretended renting days and he will get listed on the Rent Smart Contract as the <b>rightful user</b> of the <b>NFT</b> during the rental period. Once the rent period is over, the NFT owner is able to withdraw the funds and the renter can no longer use the NFT.
+                On <b>non-collateralized loans</b>, the <b>owner</b> follows the same steps as in the collateralized option but doesn't define a collateral value. The <b>renter</b> will then <b>pay</b> the <b>rental value</b> and receive a <b>wrapped NFT with the same metadata as the original one</b>. Once the <b>rental period is over</b>, the <b>wrapped token becomes invalid</b> and the <b>lenter can withdraw the NFT</b>.
                 <br/><br/>
-                The <b>owner</b> is able to <b>withdraw his NFT at any time</b> however a <b>penalty</b> will be applied on the value he will receive from the elapsed rental period if someone his currently renting the NFT. In similar fashion, the <b>renter</b> is able to <b>stop the rent at any time</b> but a <b>penalty</b> will be applied and he will have to overpay for the days he used the NFT. 
+                A <b>Marketplace Tracker Smart Contract</b> has also been deployed with the purpose of storing all the deployed Rent Smart Contracts addresses thus <b>making</b> the process of <b>fetching rental information decentralized</b>.
                 <br/><br/>
-                A <b>Marketplace Tracker Smart Contract</b> has also been deployed with the purpose of storing an array with all the deployed Rent Smart Contracts addresses thus <b>making</b> the process of <b>fetching rental information decentralized</b>.
-                <br/><br/>
-                The dApp's frontend was built using <b>Next.js</b>, <b>TypeScript</b> and <b>Tailwind CSS</b> while the Smart Contracts where developed using <b>Solidity</b>, <b>Hardhat</b> and <b>ethers.js</b>. 
+                The dApp's frontend was built using <b>Next.js</b>, <b>TypeScript</b>, <b>Tailwind CSS</b> and <b>Radix UI</b> while the Smart Contracts where developed and integrated using <b>Solidity</b>, <b>Hardhat</b>, <b>ethers.js</b>, <b>wagmi</b> and <b>viem</b>. It's currently deployed on the <b>Sepolia Testnet</b>.
                 <br/><br/>
                 <b>Code repository</b> 📁:
                 <a target="_blank" href='https://github.com/rodrigof1307/nft-renter' rel="noopener noreferrer" className="underline">

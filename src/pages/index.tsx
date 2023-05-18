@@ -8,6 +8,7 @@ import Skills from '@/components/sections/skills'
 import Experience from '@/components/sections/experience'
 import Projects from '@/components/sections/projects'
 import NFTRenter from '@/components/projects/nftRenter'
+import BugPointer from '@/components/projects/bugPointer'
 import LearningProjects from '@/components/projects/learningProjects'
 import Education from '@/components/sections/education'
 import ContactMe from '@/components/sections/contactMe'
@@ -20,14 +21,21 @@ export default function IndexPage() {
     {
         sender: "NFT Renter",
         subject: 'The dApp to lend and rent NFTs!',
-        initialInfo: 'The NFT Renter dApp was done as the final project of the "Ethereum Developer Bootcamp" from Alchemy...',
+        initialInfo: 'The NFT Renter dApp was done as the final project of the "Ethereum Developer Bootcamp" from Alchemy Universi...',
         read: true,
         body: NFTRenter()
     },
     {
+        sender: "Bug Pointer",
+        subject: 'A sybil-resistant bug bounty platform!',
+        initialInfo: 'Bug Pointer is a bug bounty platform that effectively addresses the challenge of Sybil attacks using...',
+        read: false,
+        body: BugPointer()
+    },
+    {
         sender: 'Learning Projects',
         subject: 'Learning by doing!',
-        initialInfo: 'Learning Projects is a Github repository that contains small simple projects that I built to learn...',
+        initialInfo: 'Learning Projects is a Github repository that contains small simple projects that I built to learn new technologies...',
         read: false,
         body: LearningProjects()
     }
@@ -39,8 +47,21 @@ export default function IndexPage() {
   const completeEducationCode = ['node masters.js', 'node bachelor.js', 'node courses.js']
 
   useEffect(() => {
+    setEmailInfo(emailInfo.map((email) => {
+      if(email.sender === highlightedEmail?.sender) {
+        return {
+          ...email,
+          read: true
+        }
+      }
+      return email
+    }))
+  }, [highlightedEmail])
+
+  useEffect(() => {
     const sections = document.querySelectorAll("section");
     const nftRenter = document.getElementsByClassName("nft-renter");
+    const bugPointer = document.getElementsByClassName("bug-pointer");
 
     const handleNavbar = () => {
       let activeSectionHelper = ''
@@ -61,22 +82,26 @@ export default function IndexPage() {
     const handleProjects = () => {
       if(scrollY >= sections[2].offsetTop - 500) {
         const ratio = (scrollY - sections[2].offsetTop)/(sections[3].offsetTop - sections[2].offsetTop)
-        if(0.15 <= ratio && ratio < 0.45) {
+        if(0.05 <= ratio && ratio < 0.3) {
           setHighlightedEmail(emailInfo[0])
           if(nftRenter[0]) {
-            nftRenter[0].scrollTo({ top: (nftRenter[0].scrollHeight - nftRenter[0].clientHeight)/0.3*(ratio-0.15), behavior: 'smooth'})
+            nftRenter[0].scrollTo({ top: (nftRenter[0].scrollHeight - nftRenter[0].clientHeight)/0.25*(ratio-0.05), behavior: 'smooth'})
           }
-        } if(ratio >= 0.5) {
-          setEmailInfo(emailInfo.map((email) => {
-            if(email.sender === emailInfo[1].sender) {
-              return {
-                ...email,
-                read: true
-              }
-            }
-            return email
-          }))
+        } 
+        if(0.35 <= ratio && ratio < 0.4) {
           setHighlightedEmail(emailInfo[1])
+          if(bugPointer[0]) {
+            bugPointer[0].scrollTo({ top: 0, behavior: 'smooth'})
+          }
+        }
+        if(0.4 <= ratio && ratio < 0.65) {
+          setHighlightedEmail(emailInfo[1])
+          if(bugPointer[0]) {
+            bugPointer[0].scrollTo({ top: (bugPointer[0].scrollHeight - bugPointer[0].clientHeight)/0.25*(ratio-0.4), behavior: 'smooth'})
+          }
+        } 
+        if(ratio >= 0.7) {
+          setHighlightedEmail(emailInfo[2])
         }
       }
     }
