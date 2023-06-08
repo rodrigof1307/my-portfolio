@@ -9,6 +9,7 @@ export default function LearningProjects() {
             - <b>ecdsa-node</b>: <b>Wallet management interface</b> that allows users to create wallets, generate signatures and conduct transactions between accounts using <b>Public Key Cryptography</b>. Developed with <b>React.js</b>, <b>SCSS</b> and <b>Express</b>.<br/>
             - <b>e-library</b>: Library that displays basic <b>information about books</b>. Developed with <b>Next.js</b> and <b>Tailwind CSS</b>.<br/>
             - <b>escrow-dapp</b>: Decentralized application that allows users to set up an <b>escrow service</b>. Developed with <b>React.js</b>, <b>Bootstrap</b>, <b>Hardhat</b>, <b>Solidity</b> and <b>ethers.js</b>.<br/>
+            - <b>nestjs-tutorial</b>: A simple <b>CRUD API</b> developed with <b>Nest.js</b> and <b>Prisma</b>.<br/>
             - <b>nft-mint</b>: App to help deployment and <b>launch</b> of an <b>NFT collection</b> on <b>Ethereum’s Goerli testnet</b>. Developed with <b>React.js</b>, <b>Bootstrap</b>, <b>Hardhat</b>, <b>Solidity</b> and <b>ethers.js</b>.<br/>
             - <b>stock-app</b>: Interface that displays basic <b>information about trending stocks</b>. Developed with <b>React.js</b> and <b>Bootstrap</b>.<br/>
             <br/><br/>

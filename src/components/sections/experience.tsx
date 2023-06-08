@@ -42,26 +42,26 @@ export default function Experience() {
                     <div className="ml-2">
                         <p className="text-white text-lg tracking-[0.01rem]">
                             <HL>outGoing</HL> facilitates the purchase of <HL>tickets</HL> and <HL>consumables</HL> at events as well as their management through a digital platform. 
-                            The app had over 7000 users and hosted 12 events in Lisbon, totalling 4000 tickets and 17000 consumables sold.
+                            The app had over 7500 users and hosted 14 events in Lisbon, totalling 4000 tickets and 17000 consumables sold.
                             <br/><br/>
-                            As co-founder, I’ve worn many hats. Here’s what I did as:
+                            As co-founder, I wore many hats. Here’s what I did as:
                         </p>
                         <RoleTitle title="Frontend Developer"/>
                         <p className="text-white text-lg tracking-[0.01rem]">
-                            I was responsible for the design and development of our website’s frontend, which has been built using <HL>React</HL>, <HL>TypeScript</HL>, <HL>JavaScript</HL>, 
-                            and connected to our AWS backend using <HL>GraphQL</HL>. The website is used by the organizers to <HL>create</HL> and <HL>edit events</HL> as well as to check 
+                            I was responsible for the design and development of the website’s frontend, which was built using <HL>React</HL>, <HL>TypeScript</HL>, <HL>JavaScript</HL>, 
+                            and connected to an AWS backend using <HL>GraphQL</HL>. The website was used by organizers to <HL>create</HL> and <HL>edit events</HL> as well as to check 
                             <HL> event statistics</HL> and perform <HL>ticket refunds</HL>.
                         </p>
                         <RoleTitle title="Mobile Developer"/>
                         <p className="text-white text-lg tracking-[0.01rem]">
-                            I was responsible for the design and development of our app, which has been built using <HL>React Native</HL>, <HL>Expo</HL>, <HL>TypeScript</HL>, 
-                            <HL>JavaScript</HL>, and connected to our AWS backend using <HL>GraphQL</HL>. The app is used by the public to <HL>find events</HL>, <HL>buy tickets</HL> and <HL>consumables</HL> as well as <HL>share consumables </HL>  
-                            with friends. The collaborators have a dedicated interface to <HL>validate tickets</HL> and <HL>consumable</HL> purchases.
+                            I was responsible for the design and development of the app, which was built using <HL>React Native</HL>, <HL>Expo</HL>, <HL>TypeScript</HL>, 
+                            <HL>JavaScript</HL>, and connected to an AWS backend using <HL>GraphQL</HL>. The app was used by the public to <HL>find events</HL>, <HL>buy tickets</HL> and <HL>consumables</HL> as well as <HL>share consumables </HL>  
+                            with friends. The collaborators had a dedicated interface to <HL>validate tickets</HL> and <HL>consumable</HL> purchases.
                         </p>
                         <RoleTitle title="Project Manager"/>
                         <p className="text-white text-lg tracking-[0.01rem]">
                         I <HL>organized</HL> and <HL>led</HL> a team of three developers using an <HL>Agile methodology</HL> based on sprints with clear deadlines and goals to achieve both 
-                        business and development goals. I was also responsible for <HL>pitching</HL> our product to <HL>clients</HL> and <HL>partners</HL> and coordinating its 
+                        business and development goals. I was also responsible for <HL>pitching</HL> our product to <HL>clients</HL> and <HL>partners</HL> and orchestrating its 
                         implementation on their events.
                         </p>
                     </div>
